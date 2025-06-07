@@ -41,7 +41,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Card de Impacto Ambiental */}
+          {/* Card de Pessoas Beneficiadas */}
           <div className="bg-white overflow-hidden shadow rounded-lg">
             <div className="p-5">
               <div className="flex items-center">
@@ -53,14 +53,14 @@ export default function Dashboard() {
                 <div className="ml-5 w-0 flex-1">
                   <dl>
                     <dt className="text-sm font-medium text-gray-500 truncate">
-                      Impacto Ambiental
+                      Pessoas Beneficiadas Pelas Doações
                     </dt>
                     <dd className="flex items-baseline">
                       <div className="text-2xl font-semibold text-gray-900">
-                        250 kg
+                        100
                       </div>
                       <div className="ml-2 text-sm text-gray-500">
-                        de CO₂ evitado
+                        ~0,00005% da população brasileira.
                       </div>
                     </dd>
                   </dl>
@@ -128,7 +128,7 @@ export default function Dashboard() {
                   Solicitar Nova Coleta
                 </p>
                 <p className="text-sm text-gray-500">
-                  Agende a coleta dos seus materiais recicláveis
+                  Agende a coleta dos seus itens para doação.
                 </p>
               </div>
             </Link>

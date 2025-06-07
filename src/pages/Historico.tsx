@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 interface Coleta {
   id: string;
   data: string;
-  tipoResiduo: string;
+  tipoDoacao: string;
   quantidade: number;
   status: 'pendente' | 'confirmada' | 'concluida';
   pontos: number;
@@ -22,7 +22,7 @@ export default function Historico() {
       {
         id: '1',
         data: '2024-03-15',
-        tipoResiduo: 'Papel',
+        tipoDoacao: 'Móveis',
         quantidade: 5,
         status: 'concluida',
         pontos: 50
@@ -30,7 +30,7 @@ export default function Historico() {
       {
         id: '2',
         data: '2024-03-10',
-        tipoResiduo: 'Plástico',
+        tipoDoacao: 'Livros',
         quantidade: 3,
         status: 'concluida',
         pontos: 30
@@ -38,7 +38,15 @@ export default function Historico() {
       {
         id: '3',
         data: '2024-03-20',
-        tipoResiduo: 'Vidro',
+        tipoDoacao: 'Eletrodomésticos',
+        quantidade: 4,
+        status: 'pendente',
+        pontos: 0
+      },
+            {
+        id: '4',
+        data: '2024-03-20',
+        tipoDoacao: 'Roupa',
         quantidade: 4,
         status: 'pendente',
         pontos: 0
@@ -140,10 +148,10 @@ export default function Historico() {
                             {new Date(coleta.data).toLocaleDateString('pt-BR')}
                           </td>
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {coleta.tipoResiduo}
+                            {coleta.tipoDoacao}
                           </td>
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {coleta.quantidade} kg
+                            {coleta.quantidade} itens
                           </td>
                           <td className="whitespace-nowrap px-3 py-4 text-sm">
                             <span className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${getStatusColor(coleta.status)}`}>

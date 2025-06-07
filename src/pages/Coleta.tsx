@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 interface ColetaFormData {
-  tipoResiduo: string;
+  tipoDoacao: string;
   quantidade: string;
   endereco: string;
   complemento: string;
@@ -15,7 +15,7 @@ export default function Coleta() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState<ColetaFormData>({
-    tipoResiduo: '',
+    tipoDoacao: '',
     quantidade: '',
     endereco: '',
     complemento: '',
@@ -23,11 +23,11 @@ export default function Coleta() {
   });
 
   const tiposResiduo = [
-    { id: 'papel', nome: 'Papel' },
-    { id: 'plastico', nome: 'Plástico' },
-    { id: 'vidro', nome: 'Vidro' },
-    { id: 'metal', nome: 'Metal' },
+    { id: 'roupa', nome: 'Roupa' },
+    { id: 'moveis', nome: 'Móveis' },
+    { id: 'livros', nome: 'Livros' },
     { id: 'eletronicos', nome: 'Eletrônicos' },
+    { id: 'eletronicos', nome: 'Eletrodomésticos' },
     { id: 'outros', nome: 'Outros' }
   ];
 
@@ -67,7 +67,7 @@ export default function Coleta() {
                 Solicitar Coleta
               </h3>
               <p className="mt-1 text-sm text-gray-600">
-                Preencha os dados abaixo para solicitar a coleta dos seus materiais recicláveis.
+                Preencha os dados abaixo para solicitar a coleta dos seus itens para doação.
               </p>
             </div>
           </div>
@@ -83,15 +83,15 @@ export default function Coleta() {
                   )}
 
                   <div>
-                    <label htmlFor="tipoResiduo" className="block text-sm font-medium text-gray-700">
-                      Tipo de Resíduo
+                    <label htmlFor="tipoDoacao" className="block text-sm font-medium text-gray-700">
+                      Tipo de Item
                     </label>
                     <select
-                      id="tipoResiduo"
-                      name="tipoResiduo"
+                      id="tipoDoacao"
+                      name="tipoDoacao"
                       required
                       className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                      value={formData.tipoResiduo}
+                      value={formData.tipoDoacao}
                       onChange={handleChange}
                     >
                       <option value="">Selecione um tipo</option>
@@ -105,7 +105,7 @@ export default function Coleta() {
 
                   <div>
                     <label htmlFor="quantidade" className="block text-sm font-medium text-gray-700">
-                      Quantidade Estimada (kg)
+                      Quantidade Estimada
                     </label>
                     <input
                       type="number"
